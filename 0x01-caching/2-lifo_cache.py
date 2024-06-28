@@ -13,7 +13,7 @@ class LIFOCache(BaseCaching):
     """Implmentation of the LIFO Cache that
     with inheritance from the parent
     """
-    
+
     def __init__(self):
         """Overloading the parent init function"""
         super().__init__()
@@ -26,11 +26,12 @@ class LIFOCache(BaseCaching):
         if key is None or item is None:
             return
 
-        if len(self.cache_data) >= self.MAX_ITEMS and key not in self.cache_data:
+        if len(self.cache_data) >= self.MAX_ITEMS\
+                and key not in self.cache_data:
             print("DISCARD: {}".format(self.order_of_entry[-1]))
             del self.cache_data[self.order_of_entry[-1]]
             del self.order_of_entry[-1]
-        
+
         if key in self.order_of_entry:
             key_index = self.order_of_entry.index(key)
             del self.order_of_entry[key_index]
