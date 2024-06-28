@@ -24,9 +24,8 @@ class FIFOCache(BaseCaching):
         total_keys = list(self.cache_data.keys())
 
         if len(total_keys) >= self.MAX_ITEMS:
-            current_keys = list(self.cache_data.keys())
-            print("DISCARD: {}".format(current_keys[0]))
-            del self.cache_data[current_keys[0]]
+            print("DISCARD: {}".format(total_keys[0]))
+            del self.cache_data[total_keys[0]]
 
         self.cache_data[key] = item
 
