@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""Simple Pagination implementation that returns
+range of dataset in a class"""
+
 import csv
 import math
 from typing import List
